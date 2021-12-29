@@ -92,7 +92,8 @@ seasonsFunc_0f_6f75:
 	ldh (<hNextLcdInterruptBehaviour),a
 
 	ld hl,wGfxRegs6.LCDC
-	ld (hl),$8f
+	;ld (hl),$8f
+	ld (hl),%11110001
 	; SCY
 	inc l
 	ld (hl),$58

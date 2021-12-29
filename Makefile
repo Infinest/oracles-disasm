@@ -113,7 +113,7 @@ ages:
 	@if [[ -e build ]]; then echo "The 'build' folder is not a symlink; please delete it."; false; fi
 	@if [[ ! -d $(AGES_BUILD_DIR) ]]; then mkdir $(AGES_BUILD_DIR); fi
 	@ln -s $(AGES_BUILD_DIR) build
-	@ROM_AGES=1 $(MAKE) ages.gbc
+	@ROM_AGES=1 $(MAKE) ages.pocket
 
 seasons:
 	@echo '===Seasons==='
@@ -121,10 +121,10 @@ seasons:
 	@if [[ -e build ]]; then echo "The 'build' folder is not a symlink; please delete it."; false; fi
 	@if [[ ! -d $(SEASONS_BUILD_DIR) ]]; then mkdir $(SEASONS_BUILD_DIR); fi
 	@ln -s $(SEASONS_BUILD_DIR) build
-	@ROM_SEASONS=1 $(MAKE) seasons.gbc
+	@ROM_SEASONS=1 $(MAKE) seasons.pocket
 
 
-$(GAME).gbc: $(OBJS) linkfile_$(GAME)
+$(GAME).pocket: $(OBJS) linkfile_$(GAME)
 	$(LD) -S linkfile_$(GAME) $@
 	@-tools/build/verify-checksum.sh $(GAME)
 
@@ -304,10 +304,10 @@ build/doc: | build
 	mkdir build/doc
 
 clean:
-	-rm -R build_ages_v/ build_ages_e/ build_seasons_v/ build_seasons_e/ doc/ ages.gbc seasons.gbc
+	-rm -R build_ages_v/ build_ages_e/ build_seasons_v/ build_seasons_e/ doc/ ages.pocket seasons.pocket
 
 run: ages
-	$(GBEMU) ages.gbc 2>/dev/null
+	$(GBEMU) ages.pocket 2>/dev/null
 
 # --------------------------------------------------------------
 # Documentation generation

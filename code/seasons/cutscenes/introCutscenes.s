@@ -961,8 +961,8 @@ seasonsTable_03_79e9:
 	.db $ff $01 $00 $01 $00 $00 $ff $00
 
 seasonsFunc_03_7a01:
-	ld hl,$cbd5
-	ld de,$c485
+	ld hl,wGfxRegs4
+	ld de,wGfxRegs1
 	ld b,$0c
 -
 	ld a,(de)
@@ -976,8 +976,8 @@ seasonsFunc_03_7a01:
 	ret
 
 seasonsFunc_03_7a17:
-	ld hl,$cbd5
-	ld de,$c485
+	ld hl,wGfxRegs4
+	ld de,wGfxRegs1
 	ld b,$0c
 -
 	ldi a,(hl)
@@ -985,8 +985,8 @@ seasonsFunc_03_7a17:
 	inc e
 	dec b
 	jr nz,-
-	ld a,($c485)
-	ld ($c497),a
+	ld a,(wGfxRegs1.LCDC)
+	ld (wGfxRegsFinal.LCDC),a
 	ld ($ff00+R_LCDC),a
 	ret
 

@@ -11,6 +11,7 @@
 /LynnaLab/Logs/
 /linkfile
 .idea/
+*.pocket
 *.sav
 *.gbc
 *.sn*

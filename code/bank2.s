@@ -4884,7 +4884,8 @@ _inventoryMenuState3:
 	xor a
 	ld (wGfxRegs2.SCX),a
 	ld a,(wGfxRegs2.LCDC)
-	xor $48
+	;xor $48
+	xor %00010010
 	ld (wGfxRegs2.LCDC),a
 	ld a,$01
 	jp _inventoryMenuState1@func_02_5606
@@ -10060,7 +10061,8 @@ _ringMenu_state2:
 	jr z,++
 	ld hl,wGfxRegs2.LCDC
 	ld a,(hl)
-	xor $48
+	;xor $48
+	xor %00010010
 	ld (hl),a
 	ld a,$98
 	ld (wGfxRegs2.SCX),a
@@ -10110,7 +10112,8 @@ _ringMenu_state2:
 	cp $98
 	ret c
 	ld a,(wGfxRegs2.LCDC)
-	xor $48
+	;xor $48
+	xor %00010010
 	ld (wGfxRegs2.LCDC),a
 
 @doneScrolling:

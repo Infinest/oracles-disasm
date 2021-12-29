@@ -54,7 +54,8 @@ init:
 
 	ld a,$c7
 	ld ($ff00+R_LYC),a
-	ld a,$40
+	;ld a,$40
+	ld a,%00000010
 	ld ($ff00+R_STAT),a
 
 	xor a

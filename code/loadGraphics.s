@@ -149,7 +149,8 @@ _gbaModePaletteData:
 ;;
 _resumeThreadNextFrameIfLcdIsOn:
 	ld a,($ff00+R_LCDC)
-	rlca
+	;rlca
+	rrca
 	ret nc
 
 	call resumeThreadNextFrameAndSaveBank

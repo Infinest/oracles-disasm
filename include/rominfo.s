@@ -13,7 +13,7 @@
 .rombanks 64
 .ramsize $02 ; 1 RAM bank
 
-.nintendologo
+;.nintendologo
 .romgbconly
 .licenseecodenew "01"
 .cartridgetype $1b

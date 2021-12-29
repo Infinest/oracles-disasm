@@ -1366,7 +1366,8 @@ _endgameCutsceneHandler_0a:
 	inc hl
 	ld (hl),$00
 	ld hl,wGfxRegs1.LCDC
-	set 3,(hl)
+	;set 3,(hl)
+	set 4,(hl)
 	ld a,MUS_CREDITS_2
 	jp playSound
 @@substate1:
