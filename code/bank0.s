@@ -2455,7 +2455,8 @@ lcdInterrupt:
 
 @behaviour2OrHigher:
 	push bc
-	ld c,$03
+	;ld c,$03
+	ld c,%11000000
 
 	; The first time the interrupt triggers, it's always to switch between displaying
 	; the status bar at the top of the screen and the actual game.
@@ -2465,8 +2466,7 @@ lcdInterrupt:
 	ld hl,wGfxRegs3
 -
 	ld a,($ff00+R_STAT)
-	;and c
-	and %00110000
+	and c
 	jr nz,-
 
 	ldi a,(hl)
