@@ -2508,8 +2508,7 @@ lcdInterrupt:
 ;;
 lcdInterrupt_setLcdcToA7:
 	ld a,($ff00+R_STAT)
-	;and c
-	and %00110000
+	and c
 	jr nz,lcdInterrupt_setLcdcToA7
 	;ld a,$a7
 	ld a,%11100101
@@ -2522,8 +2521,7 @@ lcdInterrupt_setLcdcToA7:
 ;   * If on the list menu, once more on line $87, where the textbox ends.
 lcdInterrupt_ringMenu:
 	ld a,($ff00+R_STAT)
-	;and c
-	and %00110000
+	and c
 	jr nz,lcdInterrupt_ringMenu
 
 	ld ($ff00+R_SCX),a ; SCX = 0
@@ -2569,8 +2567,7 @@ _lcdInterruptEnd:
 ;;
 lcdInterrupt_0bea:
 	ld a,($ff00+R_STAT)
-	;and c
-	and %00110000
+	and c
 	jr nz,lcdInterrupt_0bea
 	ld hl,wGfxRegs7.LCDC
 	ldi a,(hl)
